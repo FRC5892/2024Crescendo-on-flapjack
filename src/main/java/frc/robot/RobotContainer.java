@@ -41,10 +41,10 @@ public class RobotContainer {
                 AHRS ahrs = new AHRS(Port.kMXP); /* Alternatives:  SPI.Port.kMXP, I2C.Port.kMXP or SerialPort.Port.kUSB */
                 /* Swerve Subsystem */
                 private final Swerve s_Swerve = new Swerve(ahrs);
-                private final Intake s_GroundIntake = new Intake();
-                private final Shooter s_Shooter = new Shooter(); 
-                private final Climb s_Climb = new Climb();
-                private final Vision s_Vision = new Vision(s_Swerve::useVisionMeasurement,s_Swerve::getPose);
+                // private final Intake s_GroundIntake = new Intake();
+                // private final Shooter s_Shooter = new Shooter(); 
+                // private final Climb s_Climb = new Climb();
+                // private final Vision s_Vision = new Vision(s_Swerve::useVisionMeasurement,s_Swerve::getPose);
                 
                 
                 // private final LedSub ledSub = new LedSub();
@@ -98,24 +98,24 @@ public class RobotContainer {
         
         /* Commands */
                 /* Driver */
-                private final Command climbUp = s_Climb.climbUp();
-                private final Command climbDown = s_Climb.climbDown();
-                private final Command tiltLeft = s_Climb.tiltLeft();
-                private final Command tiltRight = s_Climb.tiltRight();
+                // private final Command climbUp = s_Climb.climbUp();
+                // private final Command climbDown = s_Climb.climbDown();
+                // private final Command tiltLeft = s_Climb.tiltLeft();
+                // private final Command tiltRight = s_Climb.tiltRight();
 
                 /* Test */
-                private final Command intakeNote = s_GroundIntake.intakeNoteCommand(driver,codriver);
+                // private final Command intakeNote = s_GroundIntake.intakeNoteCommand(driver,codriver);
                 // private final Command openClawCommand = s_Claw.openClawCommand();
                 // private final Command closeClawCommand = s_Claw.closeClawCommand();
                 //private final Command fullShootCommand = s_Shooter.fullShooter(s_GroundIntake);
         
                 /* Codriver  */
-                private final Command shootCommand = s_Shooter.shootCommand();
-                private final Command outtakeNote = s_GroundIntake.outtakeNoteCommand();
-                private final Command intakeNoteSequence = s_GroundIntake.intakeNoteSequence(driver,codriver);
-                private final Command scoreAmpSequence = s_GroundIntake.scoreAmpSequence();
-                private final Command retractIntake = s_GroundIntake.retractIntakeCommand();
-                private final Command deployIntake = s_GroundIntake.deployIntakeCommand();
+                // private final Command shootCommand = s_Shooter.shootCommand();
+                // private final Command outtakeNote = s_GroundIntake.outtakeNoteCommand();
+                // private final Command intakeNoteSequence = s_GroundIntake.intakeNoteSequence(driver,codriver);
+                // private final Command scoreAmpSequence = s_GroundIntake.scoreAmpSequence();
+                // private final Command retractIntake = s_GroundIntake.retractIntakeCommand();
+                // private final Command deployIntake = s_GroundIntake.deployIntakeCommand();
                 
                 
         /* Other */
@@ -130,17 +130,17 @@ public class RobotContainer {
                         // TODO: add Camera when we have a camera
                         // CameraServer.startAutomaticCapture();
                         
-                        SmartDashboard.putData("IntakeCommand",deployIntake);
-                        SmartDashboard.putData("ShootCommand",shootCommand);
+                        // SmartDashboard.putData("IntakeCommand",deployIntake);
+                        // SmartDashboard.putData("ShootCommand",shootCommand);
                 
                 /* PathPlanner Named Commands */
                         s_Swerve.setupPathPlanner();
-                        NamedCommands.registerCommand("deployIntake", s_GroundIntake.deployIntakeCommand());
-                        NamedCommands.registerCommand("retractIntake", s_GroundIntake.retractIntakeCommand());
-                        NamedCommands.registerCommand("intakeSequence", s_GroundIntake.intakeNoteSequence(driver,codriver));
-                        NamedCommands.registerCommand("shootSequence", s_Shooter.fullShooter(s_GroundIntake));
-                        NamedCommands.registerCommand("deployAmp", s_GroundIntake.deployAmpCommand());
-                        NamedCommands.registerCommand("ampSequence", s_GroundIntake.scoreAmpSequence());
+                        // NamedCommands.registerCommand("deployIntake", s_GroundIntake.deployIntakeCommand());
+                        // NamedCommands.registerCommand("retractIntake", s_GroundIntake.retractIntakeCommand());
+                        // NamedCommands.registerCommand("intakeSequence", s_GroundIntake.intakeNoteSequence(driver,codriver));
+                        // // NamedCommands.registerCommand("shootSequence", s_Shooter.fullShooter(s_GroundIntake));
+                        // NamedCommands.registerCommand("deployAmp", s_GroundIntake.deployAmpCommand());
+                        // NamedCommands.registerCommand("ampSequence", s_GroundIntake.scoreAmpSequence());
 
                 /* Default Commands */
                         s_Swerve.setDefaultCommand(
@@ -177,28 +177,28 @@ public class RobotContainer {
                 
                 
                 /* Testing */
-                outtakeButton.whileTrue(outtakeNote);
-                intakeNoteButton.whileTrue(intakeNote);
-                retractIntakeButton.whileTrue(retractIntake);
+                // outtakeButton.whileTrue(outtakeNote);
+                // intakeNoteButton.whileTrue(intakeNote);
+                // retractIntakeButton.whileTrue(retractIntake);
                 
                 
                 /* Codriver Buttons */
-                intakeNoteSequenceButton.onTrue(intakeNoteSequence);
-                revShooterButton.whileTrue(shootCommand);
-                shootButton.whileTrue(outtakeNote);
-                climbUpButton.whileTrue(climbUp);
-                climbDownButton.whileTrue(climbDown);
-                tiltClimbLeftButton.whileTrue(tiltLeft);
-                tiltClimbRightButton.whileTrue(tiltRight);
+                // intakeNoteSequenceButton.onTrue(intakeNoteSequence);
+                // revShooterButton.whileTrue(shootCommand);
+                // shootButton.whileTrue(outtakeNote);
+                // climbUpButton.whileTrue(climbUp);
+                // climbDownButton.whileTrue(climbDown);
+                // tiltClimbLeftButton.whileTrue(tiltLeft);
+                // tiltClimbRightButton.whileTrue(tiltRight);
 
-                scoreAmpSequenceButton.whileTrue(scoreAmpSequence);
-                deployIntakeButton2.whileTrue(deployIntake);
-                retractIntakeButton2.whileTrue(retractIntake);
+                // scoreAmpSequenceButton.whileTrue(scoreAmpSequence);
+                // deployIntakeButton2.whileTrue(deployIntake);
+                // retractIntakeButton2.whileTrue(retractIntake);
 
                 // intakeClawButton.whileTrue(openClawCommand);
                 // outtakeClawButton.whileTrue(closeClawCommand);
-                testClimbUpButton.whileTrue(climbUp);
-                testClimbDownButton.whileTrue(climbDown);
+                // testClimbUpButton.whileTrue(climbUp);
+                // testClimbDownButton.whileTrue(climbDown);
         }
 
         private void configureSmartDashboard() {

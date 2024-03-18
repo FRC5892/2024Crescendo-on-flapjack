@@ -121,7 +121,7 @@ public final class Constants {
 
     public static final double OPEN_LOOP_RAMP = 2;
 
-    public static final double DRIVE_GEAR_RATIO = (6.75 / 1.0); // 6.75:1 for L2
+    public static final double DRIVE_GEAR_RATIO = (5.14 / 1.0); // 6.75:1 for L2
 
     public static final double ANGLE_GEAR_RATIO = (12.8 / 1.0); // 12.8:1 for all L's
 
